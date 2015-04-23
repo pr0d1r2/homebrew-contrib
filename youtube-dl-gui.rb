@@ -1,7 +1,7 @@
 class YoutubeDlGui < Formula
-  homepage "https://github.com/pr0d1r2/youtube-dl-gui"
-  url "https://github.com/pr0d1r2/youtube-dl-gui.git",
-    :branch => "osx"
+  homepage "https://github.com/MrS0m30n3/youtube-dl-gui"
+  url "https://github.com/MrS0m30n3/youtube-dl-gui.git",
+    :revision => "36c8147a0ba4da01215d92957246527285cca710"
   version "0.3.7"
 
   depends_on "python"
