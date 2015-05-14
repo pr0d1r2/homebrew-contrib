@@ -7,6 +7,10 @@ class PhantomjsFlash < Formula
     :revision => "295071ebc9dcb5f71b00e5e3e6e03a8dd3141208"
   version "1.9.0"
 
+  %w(phantomjs phantomjs17 phantomjs182 phantomjs192 phantomjs198).each do |f|
+    conflicts_with f, :because => "ships same binary"
+  end
+
   def install
     system "./build.sh", "--confirm", "--jobs", ENV.make_jobs,
       "--qt-config", "-openssl-linked"
