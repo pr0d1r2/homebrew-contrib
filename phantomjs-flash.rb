@@ -3,7 +3,7 @@ require "formula"
 class PhantomjsFlash < Formula
   homepage "http://www.ryanbridges.org/2013/05/21/putting-the-flash-back-in-phantomjs"
 
-  url "https://github.com/github.com/r3b/phantomjs.git",
+  url "https://github.com/r3b/phantomjs.git",
     :revision => "295071ebc9dcb5f71b00e5e3e6e03a8dd3141208"
   version "1.9.0"
 
