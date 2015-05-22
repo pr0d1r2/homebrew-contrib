@@ -15,3 +15,6 @@ brew install https://raw.githubusercontent.com/pr0d1r2/homebrew-contrib/master/<
 
 ## Documentation
 `brew help`, `man brew` or check [Homebrew's documentation](https://github.com/Homebrew/homebrew/tree/master/share/doc/homebrew#readme).
+
+## gitup
+`brew install gitup`
