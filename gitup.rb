@@ -8,22 +8,22 @@ class Gitup < Formula
 
   resource "smmap" do
     url "https://pypi.python.org/packages/source/s/smmap/smmap-0.9.0.tar.gz"
-    sha1 "2aad63033aab4e4cf1a3f75f521d985da8b1353f"
+    sha256 "0e2b62b497bd5f0afebc002eda4d90df9d209c30ef257e8673c90a6b5c119d62"
   end
 
   resource "colorama" do
     url "https://pypi.python.org/packages/source/c/colorama/colorama-0.3.3.tar.gz"
-    sha1 "a8ee91adf4644bbdccfc73ead88f4cd0df7e3552"
+    sha256 "eb21f2ba718fbf357afdfdf6f641ab393901c7ca8d9f37edd0bee4806ffa269c"
   end
 
   resource "gitdb" do
     url "https://pypi.python.org/packages/source/g/gitdb/gitdb-0.6.4.tar.gz"
-    sha1 "21cbba28199802e73e0c4a83b7c02369bbf8c7d7"
+    sha256 "a3ebbc27be035a2e874ed904df516e35f4a29a778a764385de09de9e0f139658"
   end
 
   resource "GitPython" do
     url "https://pypi.python.org/packages/source/G/GitPython/GitPython-1.0.1.tar.gz"
-    sha1 "e05cf761feba2b751aaf9bdad624abbe2e30e07d"
+    sha256 "9c88c17bbcae2a445ff64024ef13526224f70e35e38c33416be5ceb56ca7f760"
   end
 
   def install
