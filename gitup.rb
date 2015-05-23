@@ -43,5 +43,43 @@ class Gitup < Formula
 
   test do
     system "#{bin}/gitup", "-v"
+
+    first_head_start = "f47ab45abdbc77e518776e5dc44f515721c523ae"
+    mkdir "first" do
+      system "git", "init"
+      system "git", "remote", "add", "origin", "https://github.com/pr0d1r2/homebrew-contrib.git"
+      system "git", "fetch", "origin"
+      system "git", "checkout", first_head_start
+      system "git", "reset", "--hard"
+      system "git", "checkout", "-b", "master"
+      system "git", "branch", "--set-upstream-to=origin/master", "master"
+    end
+
+    second_head_start = "f863d5ca9e39e524e8c222428e14625a5053ed2b"
+    mkdir "second" do
+      system "git", "init"
+      system "git", "remote", "add", "origin", "https://github.com/pr0d1r2/homebrew-cask-games.git"
+      system "git", "fetch", "origin"
+      system "git", "checkout", second_head_start
+      system "git", "reset", "--hard"
+      system "git", "checkout", "-b", "master"
+      system "git", "branch", "--set-upstream-to=origin/master", "master"
+    end
+
+    system "gitup", "first", "second"
+
+    first_head = `cd first ; git rev-parse HEAD`.split.first
+    if first_head == first_head_start
+      fail "FAILED: expect to change head from #{first_head_start}, but didn't"
+    else
+      puts "OK, first HEAD updated: #{first_head_start} -> #{first_head}"
+    end
+
+    second_head = `cd second ; git rev-parse HEAD`.split.first
+    if second_head == second_head_start
+      fail "FAILED: expect to change head from #{second_head_start}, but didn't"
+    else
+      puts "OK, second HEAD updated: #{second_head_start} -> #{second_head}"
+    end
   end
 end
