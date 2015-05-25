@@ -69,17 +69,9 @@ class Gitup < Formula
     system "gitup", "first", "second"
 
     first_head = `cd first ; git rev-parse HEAD`.split.first
-    if first_head == first_head_start
-      fail "FAILED: expect to change head from #{first_head_start}, but didn't"
-    else
-      puts "OK, first HEAD updated: #{first_head_start} -> #{first_head}"
-    end
+    assert_not_equal first_head, first_head_start
 
     second_head = `cd second ; git rev-parse HEAD`.split.first
-    if second_head == second_head_start
-      fail "FAILED: expect to change head from #{second_head_start}, but didn't"
-    else
-      puts "OK, second HEAD updated: #{second_head_start} -> #{second_head}"
-    end
+    assert_not_equal second_head, second_head_start
   end
 end
