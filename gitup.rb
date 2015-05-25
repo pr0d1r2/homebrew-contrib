@@ -42,8 +42,6 @@ class Gitup < Formula
   end
 
   test do
-    system "#{bin}/gitup", "-v"
-
     def prepare_repo(uri, local_head)
       system "git", "init"
       system "git", "remote", "add", "origin", uri
