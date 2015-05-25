@@ -69,5 +69,20 @@ class Gitup < Formula
 
     second_head = `cd second ; git rev-parse HEAD`.split.first
     assert_not_equal second_head, second_head_start
+
+    third_head_start = "f47ab45abdbc77e518776e5dc44f515721c523ae"
+    mkdir "third" do
+      prepare_repo("https://github.com/pr0d1r2/homebrew-contrib.git", third_head_start)
+    end
+
+    system "gitup", "--add", "third"
+
+    system "gitup", "--rebase"
+    third_head = `cd third ; git rev-parse HEAD`.split.first
+    assert_not_equal third_head, third_head_start
+
+    assert_include `gitup --list`.strip, "#{Dir.pwd}/third"
+
+    system "gitup", "--delete", "#{Dir.pwd}/third"
   end
 end
