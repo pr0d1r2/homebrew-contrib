@@ -44,26 +44,24 @@ class Gitup < Formula
   test do
     system "#{bin}/gitup", "-v"
 
-    first_head_start = "f47ab45abdbc77e518776e5dc44f515721c523ae"
-    mkdir "first" do
+    def prepare_repo(uri, local_head)
       system "git", "init"
-      system "git", "remote", "add", "origin", "https://github.com/pr0d1r2/homebrew-contrib.git"
+      system "git", "remote", "add", "origin", uri
       system "git", "fetch", "origin"
-      system "git", "checkout", first_head_start
+      system "git", "checkout", local_head
       system "git", "reset", "--hard"
       system "git", "checkout", "-b", "master"
       system "git", "branch", "--set-upstream-to=origin/master", "master"
     end
 
+    first_head_start = "f47ab45abdbc77e518776e5dc44f515721c523ae"
+    mkdir "first" do
+      prepare_repo("https://github.com/pr0d1r2/homebrew-contrib.git", first_head_start)
+    end
+
     second_head_start = "f863d5ca9e39e524e8c222428e14625a5053ed2b"
     mkdir "second" do
-      system "git", "init"
-      system "git", "remote", "add", "origin", "https://github.com/pr0d1r2/homebrew-cask-games.git"
-      system "git", "fetch", "origin"
-      system "git", "checkout", second_head_start
-      system "git", "reset", "--hard"
-      system "git", "checkout", "-b", "master"
-      system "git", "branch", "--set-upstream-to=origin/master", "master"
+      prepare_repo("https://github.com/pr0d1r2/homebrew-cask-games.git", second_head_start)
     end
 
     system "gitup", "first", "second"
