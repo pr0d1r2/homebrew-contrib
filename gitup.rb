@@ -41,6 +41,8 @@ class Gitup < Formula
     bin.env_script_all_files(libexec/"bin", :PYTHONPATH => ENV["PYTHONPATH"])
   end
 
+  include Test::Unit::Assertions
+
   test do
     def prepare_repo(uri, local_head)
       system "git", "init"
