@@ -3,7 +3,7 @@ class YoutubeDlGui < Formula
   homepage "https://github.com/MrS0m30n3/youtube-dl-gui"
   url "https://github.com/pr0d1r2/youtube-dl-gui.git",
     :branch => "osx-app",
-    :revision => "a61d117bd4d925edf465d0fb6dd9f6ea282c2f79"
+    :revision => "7da90e566bde47f3db7740d8e01cf2abd6d8bab3"
 
   # cannot use git tag right now as new version with OSX support not released
   version "0.3.8"
