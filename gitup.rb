@@ -41,8 +41,6 @@ class Gitup < Formula
     bin.env_script_all_files(libexec/"bin", :PYTHONPATH => ENV["PYTHONPATH"])
   end
 
-  include Test::Unit::Assertions
-
   test do
     def prepare_repo(uri, local_head)
       system "git", "init"
@@ -83,7 +81,7 @@ class Gitup < Formula
     third_head = `cd third ; git rev-parse HEAD`.split.first
     assert_not_equal third_head, third_head_start
 
-    assert_include `gitup --list`.strip, "#{Dir.pwd}/third"
+    assert_match /#{Dir.pwd}\/third/, `gitup --list`.strip
 
     system "gitup", "--delete", "#{Dir.pwd}/third"
   end
