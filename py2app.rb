@@ -37,7 +37,7 @@ class Py2app < Formula
   end
 
   test do
-    system("touch example.py")
-    system("py2applet --make-setup example.py")
+    touch "example.py"
+    system "py2applet", "--make-setup", "example.py"
   end
 end
