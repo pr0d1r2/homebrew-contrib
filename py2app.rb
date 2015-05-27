@@ -1,9 +1,8 @@
 class Py2app < Formula
+  desc "Create standalone Mac OS X applications with Python"
   homepage "https://pypi.python.org/pypi/py2app/"
   url "https://pypi.python.org/packages/source/p/py2app/py2app-0.9.tar.gz"
-  sha256 '7922672f9e99b50ed931780d43405ac134988b1532dd0659ef130b824f88c59d'
-
-  version "0.9"
+  sha256 "7922672f9e99b50ed931780d43405ac134988b1532dd0659ef130b824f88c59d"
 
   resource "altgraph" do
     url "https://pypi.python.org/packages/source/a/altgraph/altgraph-0.12.tar.gz"
