@@ -1,4 +1,5 @@
 class Gitup < Formula
+  desc "Allows you to easily update multiple git repositories at once"
   homepage "https://github.com/earwig/git-repo-updater"
   url "https://github.com/earwig/git-repo-updater.git",
     :revision => "51a482d7a25bed39ccc75780813c65bd666c1436",
@@ -81,7 +82,7 @@ class Gitup < Formula
     third_head = `cd third ; git rev-parse HEAD`.split.first
     assert_not_equal third_head, third_head_start
 
-    assert_match /#{Dir.pwd}\/third/, `gitup --list`.strip
+    assert_match %r{#{Dir.pwd}/third}, `gitup --list`.strip
 
     system "gitup", "--delete", "#{Dir.pwd}/third"
   end
