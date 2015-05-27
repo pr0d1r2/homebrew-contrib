@@ -1,4 +1,5 @@
 class YoutubeDlGui < Formula
+  desc "A cross platform front-end GUI of the popular youtube-dl."
   homepage "https://github.com/MrS0m30n3/youtube-dl-gui"
   url "https://github.com/pr0d1r2/youtube-dl-gui.git",
     :branch => "osx-app",
@@ -15,7 +16,7 @@ class YoutubeDlGui < Formula
   def install
     ENV.prepend_create_path "PYTHONPATH", "#{lib}/python2.7/site-packages"
     system "python", "setup.py", "py2app"
-    system "cp", "-r", "dist/Youtube-DLG.app", "#{prefix}/YoutubeDlGui.app"
+    cp_r "dist/Youtube-DLG.app", "#{prefix}/YoutubeDlGui.app"
   end
 
   test do
