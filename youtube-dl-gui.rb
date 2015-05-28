@@ -10,6 +10,7 @@ class YoutubeDlGui < Formula
 
   depends_on :python if MacOS.version <= :snow_leopard
   depends_on "wxpython"
+  depends_on "wxmac"
   depends_on "ffmpeg"
   depends_on "py2app"
 
