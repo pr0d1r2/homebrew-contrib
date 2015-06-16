@@ -10,7 +10,6 @@ class YoutubeDlGui < Formula
 
   depends_on :python if MacOS.version <= :snow_leopard
   depends_on "wxpython"
-  depends_on "wxmac"
   depends_on "ffmpeg"
 
   resource "altgraph" do
@@ -41,6 +40,7 @@ class YoutubeDlGui < Formula
       end
     end
 
+    ENV.prepend_create_path "PYTHONPATH", "/usr/local/lib/python2.7/site-packages"
     ENV.prepend_create_path "PYTHONPATH", "#{lib}/python2.7/site-packages"
     system "python", "setup.py", "py2app"
     cp_r "dist/Youtube-DLG.app", "#{prefix}/YoutubeDlGui.app"
