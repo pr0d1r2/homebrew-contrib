@@ -1,9 +1,8 @@
 class YoutubeDlGui < Formula
   desc "A cross platform front-end GUI of the popular youtube-dl."
   homepage "https://github.com/MrS0m30n3/youtube-dl-gui"
-  url "https://github.com/pr0d1r2/youtube-dl-gui.git",
-    :branch => "osx-app",
-    :revision => "7da90e566bde47f3db7740d8e01cf2abd6d8bab3"
+  url "https://github.com/MrS0m30n3/youtube-dl-gui.git",
+    :revision => "95189d3d82c159e069697fa65058c8a9f88ff686"
 
   # cannot use git tag right now as new version with OSX support not released
   version "0.3.8"
