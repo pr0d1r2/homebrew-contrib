@@ -41,10 +41,4 @@ class YoutubeDlGui < Formula
     system "python", "setup.py", "py2app"
     cp_r "dist/Youtube-DLG.app", "#{prefix}/YoutubeDlGui.app"
   end
-
-  test do
-    contents_path = "#{prefix}/YoutubeDlGui.app/Contents"
-    assert File.exist?("#{contents_path}/MacOS/python")
-    assert File.exist?("#{contents_path}/MacOS/Youtube-DLG")
-  end
 end
