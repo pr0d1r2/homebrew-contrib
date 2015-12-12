@@ -7,8 +7,6 @@ class WkhtmltopdfOld < Formula
 
   depends_on 'qt'
 
-  conflicts_with 'wkhtmltopdf', :because => 'Same binary'
-
   def install
     # fix that missing TEMP= include
     inreplace 'wkhtmltopdf.pro' do |s|
