@@ -3,7 +3,7 @@ require "formula"
 class Goenv < Formula
   homepage "https://github.com/pwoolcoc/goenv"
   url "https://github.com/pwoolcoc/goenv/archive/1.0.tar.gz"
-  sha1 "a9e2836ddc57d5b183a719168fe4cb985d509e54"
+  sha256 "3ce9956f411d982cf8dc5d564b33899e70764679efc1fbcc3ac111cab2ba3f36"
   version "1.0"
 
   depends_on :python
